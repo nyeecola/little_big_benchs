@@ -1,5 +1,3 @@
-#include "test_util.cpp"
-
 TEST_CASE(add_element_to_vector,
     std::vector<int> v;
     v.push_back(5);

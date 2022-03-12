@@ -6,18 +6,17 @@
 #define EXPECT_GT(a, b) if (!(a > b)) return false;
 
 #undef TEST_CASE
-#define TEST_CASE(test_name, test_code) \
+#define TEST_CASE(test_name, ...) \
 bool test_ ## test_name () { \
-    test_code \
+    __VA_ARGS__ \
     return true; \
 }
 
 #else
-
 // test setup (second pass)
 
 #undef TEST_CASE
-#define TEST_CASE(test_name, test_code) \
+#define TEST_CASE(test_name, ...) \
     { #test_name, test_ ## test_name },
 
 #endif
