@@ -1,6 +1,6 @@
 cflags = -O3
 
-all: run_tests run_benchmarks
+all: tests benchmarks run_tests run_benchmarks
 
 run_tests: tests
 	./bin/run_tests
