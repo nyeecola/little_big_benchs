@@ -13,7 +13,7 @@
 
 typedef void (*BenchmarkFuncPtr)(int);
 
-#define MAX_INVOCATIONS 100
+#define MAX_INVOCATIONS 10
 struct BenchmarkCase {
     const char *name;
     int parameters[MAX_INVOCATIONS];
@@ -63,7 +63,7 @@ BenchmarkResult get_readable_benchmark_time(clock_t clocks) {
     return res;
 }
 
-#define NUM_BENCHMARK_REPLAYS 500
+#define NUM_BENCHMARK_REPLAYS 4000
 int main(int argc, char **argv) {
     fprintf(stderr, "\n" PRINT_BORDER "\n");
     fprintf(stderr, "Running benchmarks...\n");

@@ -8,8 +8,8 @@
 #define DECLARE_VEC(type) \
     struct vector_ ## type { \
         type *data; \
-        int size; \
-        int capacity; \
+        size_t size; \
+        size_t capacity; \
     }; \
 
 #define VEC_INIT(name, type) \
