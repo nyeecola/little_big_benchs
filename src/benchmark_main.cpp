@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <vector>
 
+#include "vector.h"
 #include "util.h"
 #include "benchmark_util.h"
 #include "benchmark_cases.cpp"

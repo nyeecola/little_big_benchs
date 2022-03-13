@@ -6,3 +6,7 @@
 #define CYAN(a) "\x1b[36m" a "\x1b[0m"
 
 #define PRINT_BORDER "==================================================================="
+
+#define MAX(a, b) (a > b ? a : b)
+#define MIN(a, b) (a < b ? a : b)
+
