@@ -1,3 +1,13 @@
+#ifndef __TEST_IMPLEMENTATION__
+DECLARE_VEC(int);
+struct ABC {
+    float x, y, z;
+    const char *name;
+    int history[20];
+};
+DECLARE_VEC(ABC);
+#endif
+
 // C++ vector
 
 BENCHMARK(cpp_add_elements_to_vector, PARAMETERS(1000, 100000),

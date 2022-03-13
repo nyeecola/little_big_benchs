@@ -1,3 +1,13 @@
+#ifndef __TEST_IMPLEMENTATION__
+DECLARE_VEC(int);
+struct ABC {
+    float x, y, z;
+    const char *name;
+    int history[20];
+};
+DECLARE_VEC(ABC);
+#endif
+
 TEST_CASE(vector_add_elements,
     VEC_INIT(v, int);
     VEC_APPEND(v, 5);

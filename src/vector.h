@@ -80,5 +80,3 @@
     vec.size = 0; \
     vec.capacity = 0;
 
-DECLARE_VEC(int);
-
