@@ -27,6 +27,14 @@ BENCHMARK(cpp_create_small_vectors, PARAMETERS(1000, 100000),
     }
 )
 
+BENCHMARK(cpp_create_large_vectors, PARAMETERS(80, 8000),
+    for (int i = 0; i < input; i++) {
+        std::vector<ABC> v = { { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
+        ESCAPE(v.data());
+        CLOBBER();
+    }
+)
+
 // Custom vector implementation
 
 BENCHMARK(custom_add_elements_to_vector, PARAMETERS(1000, 100000),
@@ -48,4 +56,11 @@ BENCHMARK(custom_create_small_vectors, PARAMETERS(1000, 100000),
     }
 )
 
-
+BENCHMARK(custom_create_large_vectors, PARAMETERS(80, 8000),
+    for (int i = 0; i < input; i++) {
+        VEC_INIT_N(v, 10, ABC, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 });
+        ESCAPE(v.data);
+        CLOBBER();
+        VEC_DESTROY(v);
+    }
+)
